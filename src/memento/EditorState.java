@@ -1,0 +1,13 @@
+package memento;
+
+public class EditorState {
+    private final String content;
+
+    EditorState(String content) {
+        this.content = content;
+    }
+
+    public String getContent() {
+        return this.content;
+    }
+}
