@@ -1,3 +1,10 @@
+import AbstractFactory.Cpu;
+import AbstractFactory.DellFactory;
+import AbstractFactory.Factory;
+import AbstractFactory.Monitor;
+import Factory.Client;
+import Factory.Shape;
+import Factory.ShapeFactory;
 import memento.Editor;
 import memento.History;
 import state.BrushTool;
@@ -10,7 +17,7 @@ public class Main {
         Account account = new Account();
         account.deposit(1000);
         account.withdraw(100);
-        System.out.println(account.getBalance());
+        //System.out.println(account.getBalance());
 
         //Abstraction
         EmailService email = new EmailService();
@@ -44,5 +51,19 @@ public class Main {
         canvas.setCurrenTool(new SelectionTool());
         canvas.mouseDown();
         canvas.mouseUp();
+
+        //Factory pattern
+        System.out.println("------FACTORY PATTERN-----");
+        Client client = new Client();
+        Shape shape = client.build("Circle");
+        shape.draw();
+
+        //Abstract Factory pattern
+        System.out.println("---------ABSTRACT FACTORY PATTERN--------");
+        Factory factory = new DellFactory();
+        Cpu cpu = factory.buildCpu();
+        cpu.assemble();
+        Monitor monitor = factory.buildMonitor();
+        monitor.assemble();
     }
 }
