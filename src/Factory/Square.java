@@ -1,4 +1,4 @@
-package Factory;
+package factory;
 
 public class Square implements Shape {
     public void draw() {

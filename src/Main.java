@@ -1,13 +1,13 @@
-import AbstractFactory.Cpu;
-import AbstractFactory.DellFactory;
-import AbstractFactory.Factory;
-import AbstractFactory.Monitor;
-import Factory.Client;
-import Factory.Shape;
-import Factory.ShapeFactory;
+import abstractFactory.Cpu;
+import abstractFactory.DellFactory;
+import abstractFactory.Factory;
+import abstractFactory.Monitor;
+import builder.*;
+import factory.Client;
+import factory.Shape;
 import memento.Editor;
 import memento.History;
-import state.BrushTool;
+import singleton.Database;
 import state.Canvas;
 import state.SelectionTool;
 
@@ -65,5 +65,20 @@ public class Main {
         cpu.assemble();
         Monitor monitor = factory.buildMonitor();
         monitor.assemble();
+
+        //Singleton pattern
+        System.out.println("------------SINGLETON PATTERN------------");
+        Database.getConnection();
+        Database.getConnection().disconnect();
+
+        //Builder pattern
+        System.out.println("------------BUILDER PATTERN--------------");
+        HouseBuilder concreteHouseBuilder = new ConcreteHouseBuilder();
+        Constructor constructor = new Constructor(concreteHouseBuilder);
+        constructor.constructHouse();
+
+        HouseBuilder woodHouse = new WoodenHouseBuilder();
+        Constructor constructor1 = new Constructor(woodHouse);
+        constructor1.constructHouse();
     }
 }

@@ -1,4 +1,4 @@
-package AbstractFactory;
+package abstractFactory;
 
 public interface Cpu {
     public void assemble();
