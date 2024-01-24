@@ -2,8 +2,11 @@ import abstractFactory.Cpu;
 import abstractFactory.DellFactory;
 import abstractFactory.Factory;
 import abstractFactory.Monitor;
+import adapter.FancyUIServiceAdapter;
+import adapter.IMultiRestaurantApp;
+import adapter.MultiRestoApp;
 import builder.*;
-import factory.Client;
+import factory.Driver;
 import factory.Shape;
 import memento.Editor;
 import memento.History;
@@ -54,7 +57,7 @@ public class Main {
 
         //Factory pattern
         System.out.println("------FACTORY PATTERN-----");
-        Client client = new Client();
+        Driver client = new Driver();
         Shape shape = client.build("Circle");
         shape.draw();
 
@@ -80,5 +83,13 @@ public class Main {
         HouseBuilder woodHouse = new WoodenHouseBuilder();
         Constructor constructor1 = new Constructor(woodHouse);
         constructor1.constructHouse();
+
+        //Adapter pattern;
+        System.out.println("--------------ADAPTER PATTERN----------------");
+        FancyUIServiceAdapter adapter = new FancyUIServiceAdapter();
+        adapter.displayMenus("Dina thai fung");
+
+        IMultiRestaurantApp multiRestaurantApp = new MultiRestoApp();
+        multiRestaurantApp.displayRecommendations("Cold stone");
     }
 }

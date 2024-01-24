@@ -1,9 +1,9 @@
 package factory;
 
-public class Client {
+public class Driver {
     ShapeFactory shapeFactory;
 
-    public Client() {
+    public Driver() {
         shapeFactory = null;
     }
 
