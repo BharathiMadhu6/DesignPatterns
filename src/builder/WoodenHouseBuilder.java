@@ -1,32 +1,32 @@
 package builder;
 
 public class WoodenHouseBuilder implements HouseBuilder{
-    private House house;
+    private final House house;
 
     public WoodenHouseBuilder() {
         this.house = new House();
     }
     @Override
     public void buildFoundation() {
-        house.setFoundation("concrete");
+        house.foundation("concrete");
         System.out.println("Building foundation of wooden house");
     }
 
     @Override
     public void buildStructure() {
-        house.setStructure("wood");
+        house.structure("wood");
         System.out.println("Building structure of wooden house");
     }
 
     @Override
     public void buildRoof() {
-        house.setRoof("special material");
+        house.roof("special material");
         System.out.println("Building roof of wooden house");
     }
 
     @Override
     public void buildDoor() {
-        house.setDoor("wood");
+        house.door("wood");
         System.out.println("Building door of wooden house");
     }
 

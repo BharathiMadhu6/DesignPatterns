@@ -1,27 +1,27 @@
 package builder;
 
-public class House {
+public class House implements HousePlan{
     String foundation;
     String structure;
     String door;
     String roof;
 
-    void setFoundation(String foundation) {
-        this.foundation = foundation;
-        System.out.println("Material used: "+foundation);;
+    public void foundation(String f) {
+        this.foundation = f;
+        System.out.println("Material used: "+f);;
     }
 
-    void setStructure(String structure) {
+    public void structure(String structure) {
         this.structure = structure;
         System.out.println("Material used: "+structure);;
     }
 
-    void setDoor(String door) {
+    public void door(String door) {
         this.door = door;
         System.out.println("Material used: "+door);;
     }
 
-    void setRoof(String roof) {
+    public void roof(String roof) {
         this.roof = roof;
         System.out.println("Material used: "+roof);;
     }

@@ -1,8 +1,8 @@
 package builder;
 
 public interface HousePlan {
-    public abstract void setFoundation();
-    public abstract void setStructure();
-    public abstract void setRoof();
-    public abstract void setDoor();
+    public abstract void foundation(String f);
+    public abstract void structure(String structure);
+    public abstract void roof(String roof);
+    public abstract void door(String door);
 }

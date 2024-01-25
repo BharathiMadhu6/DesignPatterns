@@ -8,7 +8,7 @@ public class Constructor {
     }
 
     public House getHouse() {
-        return this.getHouse();
+        return this.houseBuilder.getHouse();
     }
 
     public void constructHouse() {

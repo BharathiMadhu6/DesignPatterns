@@ -6,6 +6,10 @@ import adapter.FancyUIServiceAdapter;
 import adapter.IMultiRestaurantApp;
 import adapter.MultiRestoApp;
 import builder.*;
+import decorator.BaseNotifierDecorator;
+import decorator.INotifier;
+import decorator.Notifier;
+import decorator.WhatsappDecorator;
 import factory.Driver;
 import factory.Shape;
 import memento.Editor;
@@ -91,5 +95,10 @@ public class Main {
 
         IMultiRestaurantApp multiRestaurantApp = new MultiRestoApp();
         multiRestaurantApp.displayRecommendations("Cold stone");
+
+        //Decorator pattern
+        System.out.println("--------------DECORATOR PATTERN----------------");
+        INotifier notifier = new WhatsappDecorator(new Notifier("Riddhi"));
+        notifier.send("blah");
     }
 }
